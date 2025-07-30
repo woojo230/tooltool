@@ -1,0 +1,16 @@
+.pageWrapper {
+  margin-top: 10rem;
+}
+
+.aboutWrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  padding: 0 var(--padding);
+}
+
+@media (max-width: 900px) {
+  .aboutWrapper {
+    grid-template-columns: 1fr;
+  }
+}

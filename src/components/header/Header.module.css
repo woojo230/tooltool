@@ -1,0 +1,111 @@
+.header {
+  display: flex;
+  left: 50%;
+  top: 30px;
+  transform: translateX(-50%);
+  position: fixed;
+  z-index: 1000;
+  align-items: center;
+  overflow: hidden;
+  background: var(--color-accent);
+  border-radius: 8px;
+  height: 52px;
+  transition: all 0.4s ease-in-out;
+}
+
+/* White Box Including tooltool */
+.headerLogo {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent-variant);
+  border: 6px solid var(--color-accent);
+  border-radius: 10px;
+  padding: 8px 12px;
+  z-index: 3;
+  cursor: pointer;
+}
+
+/* tooltool Logo */
+.headerLogo img {
+  display: block;
+  height: 24px;
+}
+
+/* About Case study Mission */
+.inside {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.inside ul {
+  display: flex;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.headerItem {
+  font-family: 'TT Hoves Pro Medium', sans-serif;
+  font-size: 1.5rem;
+  color: var(--color-accent-variant);
+  margin-right: 10px;
+  margin-left: 25px;
+  transform: translateY(1px); /* Optical Adjustement */
+  cursor: pointer;
+}
+
+/* Hamburger button */
+.headerButton {
+  display: flex;
+  padding-right: 15px;
+  padding-left: 15px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.hamburger img {
+  display: block;
+  width: 25px;
+  height: 25px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    width: 152px;
+    height: 52px;
+    transition: width 0.4s ease-in-out, height 0.4s ease-in-out !important;
+  }
+
+  .headerLogo {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .inside {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .inside ul {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .headerItem {
+    margin: 8px 0;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+    font-size: 1.3rem; /* 모바일에서 약간 작게 */
+  }
+}

@@ -1,0 +1,84 @@
+:root {
+  --gutter: 1.5rem; /* Space Between */
+  --padding: 2rem; /* Window */
+
+  /* App Colors */
+  --color-primary: var(--color-black);
+  --color-accent: var(--color-grey);
+  --color-accent-variant: var(--color-lightgrey);
+  --color-background: var(--color-white);
+  --color-brand: var(--color-lime);
+
+  /* Colors */
+  --color-black: #1f1f1f;
+  --color-grey: #a0a0a0;
+  --color-lightgrey: #efefef;
+  --color-white: #fcfcfc;
+  --color-lime: #aff7a1;
+}
+
+body {
+  font-family: 'TT Hoves Pro Medium', sans-serif;
+  font-size: 1rem;
+  line-height: 1.2;
+  color: var(--color-primary);
+  font-weight: normal;
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-bottom: 200px;
+}
+
+html,
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Reset default margins */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+.heading-1 {
+  font-size: 2.5rem;
+  line-height: 1.1;
+  font-weight: normal;
+}
+
+h2,
+.heading-2 {
+  font-size: 1.8rem;
+  line-height: 1.1;
+  font-weight: normal;
+}
+
+h3,
+.heading-3 {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  font-weight: normal;
+}

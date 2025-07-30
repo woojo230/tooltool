@@ -1,0 +1,25 @@
+.pageWrapper {
+  margin-top: 160px;
+}
+
+.tooltoolGallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 6rem;
+  column-gap: var(--gutter);
+  padding: 0 var(--padding);
+  width: 100%;
+  margin: 80px 0;
+}
+
+@media (max-width: 1200px) {
+  .tooltoolGallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+  }
+}
+
+@media (max-width: 800px) {
+  .tooltoolGallery {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+  }
+}

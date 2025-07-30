@@ -1,0 +1,11 @@
+.pageWrapper {
+  margin-top: 10rem;
+}
+
+.caseGallery {
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--padding);
+  row-gap: 6rem;
+  margin: 5rem 0;
+}

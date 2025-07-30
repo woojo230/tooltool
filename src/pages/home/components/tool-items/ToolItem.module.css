@@ -1,0 +1,55 @@
+.tooltoolItem {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.thumbnailContainer img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 20px;
+  background-color: var(--color-accent-variant);
+  aspect-ratio: 1 / 1;
+  inset: 0;
+}
+
+/* make videos behave just like your thumbnails */
+.thumbnailContainer video {
+  width: 100%;
+  height: 100%; /* preserve aspect ratio */
+  display: block; /* remove inline gaps */
+  border-radius: 20px; /* match your rounded corners */
+  background-color: var(--color-accent-variant);
+  object-fit: cover; /* fill the box cleanly */
+  aspect-ratio: 1 / 1;
+  inset: 0;
+}
+
+.thumbnailLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Green Nav Bar */
+.tooltoolLandingButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-brand);
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 1rem;
+  gap: 1rem; /* adds spacing */
+}
+
+.leftContainer {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.rightContainer {
+  display: flex;
+  align-items: center;
+}

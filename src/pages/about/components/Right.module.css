@@ -1,0 +1,53 @@
+.pageWrapper {
+  margin-top: 160px;
+}
+
+.aboutWrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  padding: 0 var(--padding);
+}
+
+.sectionBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.aboutPageDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Section Label Styling */
+.sectionLabel {
+  background-color: var(--color-brand);
+  color: var(--color-black);
+  padding: 0.5rem 0.5rem 0.375rem 0.5rem;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+.contactGrid {
+  display: grid;
+  flex-direction: column;
+}
+
+.contactGroup {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0 5rem;
+}
+
+.designerSection {
+  margin-top: 1rem;
+}
+
+/* About Page Responsive */
+@media (max-width: 900px) {
+  .aboutWrapper {
+    grid-template-columns: 1fr;
+  }
+}
