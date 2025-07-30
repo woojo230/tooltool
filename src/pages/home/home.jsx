@@ -1,6 +1,6 @@
 import TopText from '../../components/top-text/TopText';
 import ToolItem from './components/tool-items/ToolItem';
-import style from './home.module.css';
+import style from './Home.module.css';
 
 import video3 from '../../assets/thumbnail/filpboards_thumbnail.mp4';
 import video1 from '../../assets/thumbnail/fluid_thumbnail.mp4';
