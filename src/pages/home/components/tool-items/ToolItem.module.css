@@ -2,6 +2,7 @@
 .toolItemWrapper {
   position: relative;
   min-height: 60vh;
+  /* margin-top: 50px; */
 }
 
 .tooltoolItem {
@@ -70,35 +71,12 @@
   .toolItemWrapper {
     min-height: 50vh;
   }
-
-  .leftContainer {
-    gap: 2rem;
-  }
-
-  .tooltoolLandingButton {
-    padding: 10px;
-  }
 }
 
 /* 모바일 크기 */
 @media (max-width: 800px) {
   .toolItemWrapper {
-    min-height: 40vh;
-  }
-
-  .thumbnailContainer video,
-  .thumbnailContainer img {
-    aspect-ratio: 4 / 3;
-  }
-
-  .leftContainer {
-    gap: 1.5rem;
-    font-size: 0.9rem;
-  }
-
-  .tooltoolLandingButton {
-    padding: 8px 10px;
-    margin-top: 0.8rem;
+    min-height: 60vh;
   }
 }
 
@@ -106,20 +84,5 @@
 @media (max-width: 480px) {
   .toolItemWrapper {
     min-height: 35vh;
-  }
-
-  .thumbnailContainer video,
-  .leftContainer {
-    gap: 1rem;
-    font-size: 0.8rem;
-  }
-
-  .rightContainer {
-    font-size: 0.8rem;
-  }
-
-  .tooltoolLandingButton {
-    padding: 6px 8px;
-    margin-top: 0.5rem;
   }
 }

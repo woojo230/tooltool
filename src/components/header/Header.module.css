@@ -11,6 +11,7 @@
   border-radius: 8px;
   height: 52px;
   transition: all 0.4s ease-in-out;
+  z-index: 3000;
 }
 
 /* White Box Including tooltool */
