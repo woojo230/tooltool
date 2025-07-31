@@ -1,0 +1,35 @@
+.iframeContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 999;
+}
+
+.button {
+  position: fixed;
+  bottom: 4%;
+  right: 100px;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.iframe {
+  position: fixed;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  height: 87vh;
+  border: 1px solid #ccc;
+  background: #fff;
+  z-index: 1000;
+}

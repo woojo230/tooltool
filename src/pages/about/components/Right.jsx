@@ -26,7 +26,7 @@ function Right() {
           </div>
 
           <div className={`${styles.contactGroup} ${styles.designerSection}`}>
-            <p>Designers</p>
+            <p>Designers&nbsp;</p>
             <p>
               <a
                 href="https://instagram.com/susu_sean"
@@ -58,7 +58,7 @@ function Right() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Jeong Hyeok Woo
+                Aaron Woo
               </a>
             </p>
           </div>
