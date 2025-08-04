@@ -2,125 +2,80 @@ import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/Logo.svg';
 import hamburger from '../../assets/header_hamburger.svg';
 import style from './Header.module.css';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
-// Navigation utility functions
-export const gotoHome = (navigation) => navigation('/home');
-export const gotoCaseStudy = (navigation) => navigation('/case-study');
-export const About = (navigation) => navigation('/about');
-
-// Menu state constants
-const MENU_STATES = {
-  CLOSED: 'closed',
-  OPENING: 'opening',
-  OPEN: 'open',
-  CLOSING: 'closing',
-};
-
-// Responsive breakpoint
-const MOBILE_BREAKPOINT = 768;
-
-// Animation dimensions
-const DIMENSIONS = {
-  mobile: {
-    width: 152,
-    collapsed: 78,
-    expanded: 165,
-  },
-  desktop: {
-    collapsed: 207,
-    expanded: 489,
-    height: 52,
-  },
-};
+export function gotoHome(navigation) {
+  navigation('/home');
+}
+export function gotoCaseStudy(navigation) {
+  navigation('/case-study');
+}
+export function About(navigation) {
+  navigation('/about');
+}
 
 function Header() {
   const navigation = useNavigate();
-  const [menuState, setMenuState] = useState(MENU_STATES.CLOSED);
-  const [isMobile, setIsMobile] = useState(
-    window.innerWidth <= MOBILE_BREAKPOINT
-  );
+  const [ishamburgerClicked, setIsHamburgerClicked] = useState(false);
+  const [hideMenu, setHideMenu] = useState(true);
+  const [isMobile, setIsMobile] = useState(true);
+  const headerRef = useRef(null);
 
-  // Mobile detection with cleanup
+  // 모바일 환경 감지
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= MOBILE_BREAKPOINT);
+      setIsMobile(window.innerWidth <= 768);
     };
-
+    checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Menu state helpers
-  const isMenuVisible =
-    menuState === MENU_STATES.OPENING || menuState === MENU_STATES.OPEN;
-  const isMenuExpanded =
-    menuState === MENU_STATES.OPEN || menuState === MENU_STATES.OPENING;
+  const handleTransitionEnd = () => {
+    if (!ishamburgerClicked) {
+      setHideMenu(true);
+    }
+  };
 
-  // Event handlers
-  const handleHamburgerClick = useCallback(() => {
-    setMenuState((prevState) => {
-      switch (prevState) {
-        case MENU_STATES.CLOSED:
-          return MENU_STATES.OPENING;
-        case MENU_STATES.OPEN:
-          return MENU_STATES.CLOSING;
-        default:
-          return prevState;
-      }
-    });
-  }, []);
+  const handleHamburgerClick = () => {
+    if (ishamburgerClicked) {
+      setIsHamburgerClicked(false);
+      setHideMenu(false);
+    } else {
+      setIsHamburgerClicked(true);
+    }
+  };
 
-  const handleTransitionEnd = useCallback(() => {
-    setMenuState((prevState) => {
-      switch (prevState) {
-        case MENU_STATES.OPENING:
-          return MENU_STATES.OPEN;
-        case MENU_STATES.CLOSING:
-          return MENU_STATES.CLOSED;
-        default:
-          return prevState;
-      }
-    });
-  }, []);
-
-  // Style calculations
+  // 모바일에서의 스타일 계산
   const getHeaderStyle = () => {
     if (isMobile) {
       return {
-        width: `${DIMENSIONS.mobile.width}px`,
-        height: isMenuExpanded
-          ? `${DIMENSIONS.mobile.expanded}px`
-          : `${DIMENSIONS.mobile.collapsed}px`,
+        width: '152px',
+        height: ishamburgerClicked ? '165px' : '78px',
+      };
+    } else {
+      return {
+        width: ishamburgerClicked ? '489px' : '207px',
+        height: '52px',
       };
     }
-
-    return {
-      width: isMenuExpanded
-        ? `${DIMENSIONS.desktop.expanded}px`
-        : `${DIMENSIONS.desktop.collapsed}px`,
-      height: `${DIMENSIONS.desktop.height}px`,
-    };
   };
 
   const getInsideStyle = () => {
-    const baseStyle = {
-      opacity: isMenuVisible ? 1 : 0,
-      transition: 'opacity 0.6s ease-in-out',
-    };
-
     if (isMobile) {
       return {
-        ...baseStyle,
-        display: menuState === MENU_STATES.CLOSED ? 'none' : 'flex',
+        opacity: ishamburgerClicked ? 1 : 0,
+        transition: 'opacity 0.4s ease-in-out, transform 0.4s ease-in-out',
+        display: ishamburgerClicked || !hideMenu ? 'flex' : 'none', // 수정
+      };
+    } else {
+      return {
+        opacity: ishamburgerClicked ? 1 : 0,
+        pointerEvents: ishamburgerClicked ? 'auto' : 'none', // 수정
+        transition: 'opacity 0.4s',
+        display: ishamburgerClicked || !hideMenu ? 'flex' : 'none', // 수정
       };
     }
-
-    return {
-      ...baseStyle,
-      pointerEvents: isMenuVisible ? 'auto' : 'none',
-      display: menuState === MENU_STATES.CLOSED ? 'none' : 'flex',
-    };
   };
 
   return (
@@ -129,6 +84,7 @@ function Header() {
         <div
           className={style.header}
           style={getHeaderStyle()}
+          ref={headerRef}
           onTransitionEnd={handleTransitionEnd}
         >
           <div
@@ -157,7 +113,7 @@ function Header() {
 
           <div className={style.headerButton} onClick={handleHamburgerClick}>
             <span className={style.hamburger}>
-              <img src={hamburger} alt="menu" />
+              <img src={hamburger} alt="..." />
             </span>
           </div>
         </div>
