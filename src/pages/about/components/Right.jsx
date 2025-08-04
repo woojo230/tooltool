@@ -10,7 +10,7 @@ function Right() {
           <div className={styles.contactGroup}>
             <p>Email</p>
             <p>
-              <a href="mailto:sean001212q@gmail.com">sean001212q@gmail.com</a>
+              <a href="tooltool@gmail.com">tooltool@gmail.com</a>
             </p>
 
             <p>Instagram</p>

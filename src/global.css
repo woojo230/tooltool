@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'TT Hoves Pro Medium';
+  src: url('./assets/fonts/TT_Hoves_Pro_Medium.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --gutter: 1.5rem; /* Space Between */
   --padding: 2.5rem; /* Window */

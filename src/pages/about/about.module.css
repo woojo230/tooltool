@@ -9,8 +9,16 @@
   padding: 0 var(--padding);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .aboutWrapper {
     grid-template-columns: 1fr;
+    gap: 4.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutWrapper {
+    grid-template-columns: 1fr;
+    gap: 2.37rem;
   }
 }

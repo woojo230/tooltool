@@ -11,7 +11,7 @@
 .aboutPageDiv {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .sectionLabel {
@@ -22,9 +22,55 @@
   width: fit-content;
 }
 
-@media (max-width: 768px) {
-  .aboutPageDiv p,
-  h1 {
-    font-size: 1rem;
+@media (max-width: 1024px) {
+  .sectionBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 4.25rem;
+  }
+
+  .aboutPageDiv h1 {
+    font-size: 28px;
+  }
+
+  .aboutPageDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 1.12rem;
+  }
+
+  .aboutPageDiv p {
+    font-size: 16px;
+  }
+
+  .contactGroup p {
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .aboutPageDiv h1 {
+    font-size: 16px !important;
+  }
+
+  .aboutPageDiv p {
+    font-size: 16px !important;
+  }
+
+  .sectionLabel {
+    font-size: 16px !important;
+  }
+
+  .aboutPageDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 }
