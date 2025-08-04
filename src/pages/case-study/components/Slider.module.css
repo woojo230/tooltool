@@ -105,6 +105,7 @@
 .rightContainer {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 @media (max-width: 480px) {

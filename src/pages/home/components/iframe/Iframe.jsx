@@ -6,7 +6,7 @@ function Iframe({ handleClose, url }) {
       <div className={styles.iframeContainer} onClick={handleClose} />
 
       <button onClick={handleClose} className={styles.button}>
-        close
+        Close
       </button>
 
       <iframe src={url} title="External Site" className={styles.iframe} />

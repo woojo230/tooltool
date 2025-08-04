@@ -8,6 +8,7 @@ import img4 from '../../../assets/caseStudy/enchelon_casestudy/enchelon_casestud
 import video5 from '../../../assets/caseStudy/enchelon_casestudy/enchelon_casestudy_05.mp4';
 import img6 from '../../../assets/caseStudy/enchelon_casestudy/enchelon_casestudy_06.jpg';
 import video7 from '../../../assets/caseStudy/enchelon_casestudy/enchelon_casestudy_07.mp4';
+import Iframe from '../../home/components/iframe/Iframe';
 
 // export const mockData = [
 //   {
@@ -48,6 +49,7 @@ export function Slider({ title, theme, mockData, url }) {
   const animationRef = useRef(null);
   const startTimeRef = useRef(null);
   const duration = 30000;
+  const [showIframe, setShowIframe] = useState(false);
 
   const getMaxScroll = useCallback(() => {
     if (!carouselTrackRef.current || !carouselRef.current) return 0;
@@ -121,10 +123,17 @@ export function Slider({ title, theme, mockData, url }) {
     setSliderValue(newValue);
   };
 
-  const handleClick = () => {};
+  const handleOpen = () => {
+    setShowIframe(true);
+  };
+
+  const handleClose = () => {
+    setShowIframe(false);
+  };
 
   return (
     <div className={style.caseBlock}>
+      {showIframe && <Iframe handleClose={handleClose} url={url} />}
       <div className={style.carousel} ref={carouselRef} onScroll={handleScroll}>
         <div className={style.carouselTrack} ref={carouselTrackRef}>
           {mockData.map((data, idx) =>
@@ -163,10 +172,8 @@ export function Slider({ title, theme, mockData, url }) {
           <span>{title}</span>
           <span>{theme}</span>
         </div>
-        <div className={style.rightContainer}>
-          <a href={url} rel="noopener noreferrer">
-            Try This Tool!
-          </a>
+        <div className={style.rightContainer} onClick={handleOpen}>
+          <a>Try This Tool!</a>
         </div>
       </div>
     </div>
