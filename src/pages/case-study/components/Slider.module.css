@@ -37,6 +37,7 @@
   object-fit: cover;
   border-radius: 20px;
   background-color: var(--color-accent-variant);
+  aspect-ratio: 16 / 9;
   display: block; /* already here, just emphasizing */
 }
 
