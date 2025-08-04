@@ -51,7 +51,7 @@ function Header() {
     if (isMobile) {
       return {
         width: '152px',
-        height: ishamburgerClicked ? '80px' : '165px',
+        height: ishamburgerClicked ? '78px' : '165px',
       };
     } else {
       return {

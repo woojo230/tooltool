@@ -5,7 +5,7 @@ function Right() {
   return (
     <div className={styles.sectionBlock}>
       <div className={styles.aboutPageDiv}>
-        <p className={styles.sectionLabel + ' body-2'}>CONTACT US</p>
+        <p className={styles.sectionLabel}>CONTACT US</p>
         <div className={styles.contactGrid}>
           <div className={styles.contactGroup}>
             <p>Email</p>
@@ -25,6 +25,9 @@ function Right() {
             </p>
           </div>
 
+          <p className={styles.textGap}></p>
+
+          <p className={styles.sectionLabel}>Our Team</p>
           <div className={`${styles.contactGroup} ${styles.designerSection}`}>
             <p>Designers&nbsp;</p>
             <p>

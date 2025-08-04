@@ -12,7 +12,7 @@
 }
 
 .carousel {
-  height: 25rem;
+  height: 27.5rem;
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none; /* Firefox */
@@ -26,7 +26,7 @@
 .carouselTrack {
   display: flex;
   gap: var(--gutter);
-  height: 25rem;
+  height: 100%;
 }
 
 .carouselTrack img,
@@ -105,4 +105,19 @@
 .rightContainer {
   display: flex;
   align-items: center;
+}
+
+@media (max-width: 480px) {
+  .carousel {
+    height: 17.5rem;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    border-radius: 20px;
+  }
+  .carouselTrack img,
+  .carouselTrack video {
+    width: 21.5rem;
+    height: 17.5rem;
+  }
 }

@@ -5,7 +5,14 @@
 .caseGallery {
   display: flex;
   flex-direction: column;
-  padding: 0 var(--padding);
-  row-gap: 6rem;
+  padding: 0 2.5rem;
+  row-gap: 5rem;
   margin: 5rem 0;
+}
+
+@media (max-width: 480px) {
+  .caseGallery {
+    row-gap: 3.75rem;
+    padding: 0 1.5rem;
+  }
 }

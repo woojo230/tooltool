@@ -1,6 +1,6 @@
 :root {
   --gutter: 1.5rem; /* Space Between */
-  --padding: 2rem; /* Window */
+  --padding: 2.5rem; /* Window */
 
   /* App Colors */
   --color-primary: var(--color-black);
@@ -60,6 +60,7 @@ a {
 
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 h1,

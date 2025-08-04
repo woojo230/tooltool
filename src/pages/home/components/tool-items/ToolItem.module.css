@@ -50,8 +50,8 @@
   background: var(--color-brand);
   border-radius: 8px;
   padding: 12px;
-  margin-top: 1rem;
-  gap: 1rem;
+  margin-top: 1.125rem;
+  gap: 1.125rem;
   flex-shrink: 0;
 }
 
@@ -69,20 +69,23 @@
 /* 태블릿 크기 */
 @media (max-width: 1200px) {
   .toolItemWrapper {
-    min-height: 50vh;
+    min-height: 26.6rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .toolItemWrapper {
+    min-height: 26.6rem;
   }
 }
 
 /* 모바일 크기 */
-@media (max-width: 800px) {
-  .toolItemWrapper {
-    min-height: 60vh;
-  }
+@media (max-width: 932px) {
 }
 
 /* 작은 모바일 */
 @media (max-width: 480px) {
   .toolItemWrapper {
-    min-height: 35vh;
+    min-height: 25.2rem;
   }
 }

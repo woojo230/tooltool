@@ -1,3 +1,7 @@
+.mainWrapper {
+  margin-bottom: 5rem;
+}
+
 .brandMessage {
   max-width: 50rem;
   margin: 0 auto;
@@ -6,8 +10,24 @@
   padding: 0 var(--padding);
 }
 
+@media (max-width: 1024px) {
+  .brandMessage {
+    font-size: 24px;
+  }
+}
+
 @media (max-width: 768px) {
   .mainWrapper {
     margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainWrapper {
+    margin-bottom: 60px;
+  }
+
+  .brandMessage {
+    font-size: 20px;
   }
 }
