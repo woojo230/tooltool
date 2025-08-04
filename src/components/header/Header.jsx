@@ -106,7 +106,7 @@ function Header() {
   const getInsideStyle = () => {
     const baseStyle = {
       opacity: isMenuVisible ? 1 : 0,
-      transition: 'opacity 0.4s ease-in-out',
+      transition: 'opacity 0.6s ease-in-out',
     };
 
     if (isMobile) {

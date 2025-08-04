@@ -40,6 +40,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 /* Green Nav Bar */

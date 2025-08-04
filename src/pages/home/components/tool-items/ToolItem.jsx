@@ -17,7 +17,7 @@ function ToolItem({ video, num, title, url }) {
       <div className={styles.toolItemWrapper}>
         {showIframe && <Iframe handleClose={handleClose} url={url} />}
         <div className={styles.tooltoolItem}>
-          <a className={styles.thumbnailLink}>
+          <a className={styles.thumbnailLink} onClick={handleOpen}>
             <div className={styles.tooltoolItem}>
               <div className={styles.thumbnailContainer}>
                 <video src={video} autoPlay muted loop playsInline></video>
