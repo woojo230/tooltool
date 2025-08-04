@@ -8,9 +8,24 @@ import video2 from '../../assets/thumbnail/pintoy_thumbnail.mp4';
 
 function Home() {
   const mockData = [
-    { video: video3, num: 3, title: 'Flipboards' },
-    { video: video2, num: 2, title: 'Pintoy' },
-    { video: video1, num: 1, title: 'Fluid' },
+    {
+      video: video3,
+      num: 3,
+      title: 'Flipboards',
+      url: 'https://tool-flip-boards.netlify.app/',
+    },
+    {
+      video: video2,
+      num: 2,
+      title: 'Pintoy',
+      url: 'https://tool-pintoy.netlify.app/',
+    },
+    {
+      video: video1,
+      num: 1,
+      title: 'Fluid',
+      url: 'https://tool-fluid.netlify.app/',
+    },
   ];
   return (
     <div className={style.pageWrapper}>

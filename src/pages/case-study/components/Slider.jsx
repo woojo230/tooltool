@@ -9,38 +9,38 @@ import video5 from '../../../assets/caseStudy/enchelon_casestudy/enchelon_casest
 import img6 from '../../../assets/caseStudy/enchelon_casestudy/enchelon_casestudy_06.jpg';
 import video7 from '../../../assets/caseStudy/enchelon_casestudy/enchelon_casestudy_07.mp4';
 
-export const mockData = [
-  {
-    data: img1,
-    type: 'image',
-  },
-  {
-    data: img2,
-    type: 'image',
-  },
-  {
-    data: video3,
-    type: 'video',
-  },
-  {
-    data: img4,
-    type: 'image',
-  },
-  {
-    data: video5,
-    type: 'video',
-  },
-  {
-    data: img6,
-    type: 'image',
-  },
-  {
-    data: video7,
-    type: 'video',
-  },
-];
+// export const mockData = [
+//   {
+//     data: img1,
+//     type: 'image',
+//   },
+//   {
+//     data: img2,
+//     type: 'image',
+//   },
+//   {
+//     data: video3,
+//     type: 'video',
+//   },
+//   {
+//     data: img4,
+//     type: 'image',
+//   },
+//   {
+//     data: video5,
+//     type: 'video',
+//   },
+//   {
+//     data: img6,
+//     type: 'image',
+//   },
+//   {
+//     data: video7,
+//     type: 'video',
+//   },
+// ];
 
-export function Slider({ title, theme, mockData }) {
+export function Slider({ title, theme, mockData, url }) {
   const [sliderValue, setSliderValue] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const carouselTrackRef = useRef(null);
@@ -121,6 +121,8 @@ export function Slider({ title, theme, mockData }) {
     setSliderValue(newValue);
   };
 
+  const handleClick = () => {};
+
   return (
     <div className={style.caseBlock}>
       <div className={style.carousel} ref={carouselRef} onScroll={handleScroll}>
@@ -162,7 +164,9 @@ export function Slider({ title, theme, mockData }) {
           <span>{theme}</span>
         </div>
         <div className={style.rightContainer}>
-          <a>Try This Tool!</a>
+          <a href={url} rel="noopener noreferrer">
+            Try This Tool!
+          </a>
         </div>
       </div>
     </div>

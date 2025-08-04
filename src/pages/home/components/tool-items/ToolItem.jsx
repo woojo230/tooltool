@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styles from './ToolItem.module.css';
 import Iframe from '../iframe/Iframe';
 
-function ToolItem({ video, num, title }) {
+function ToolItem({ video, num, title, url }) {
   const [showIframe, setShowIframe] = useState(false);
 
   const handleOpen = () => {
@@ -15,7 +15,7 @@ function ToolItem({ video, num, title }) {
   return (
     <>
       <div className={styles.toolItemWrapper}>
-        {showIframe && <Iframe handleClose={handleClose} />}
+        {showIframe && <Iframe handleClose={handleClose} url={url} />}
         <div className={styles.tooltoolItem}>
           <a className={styles.thumbnailLink}>
             <div className={styles.tooltoolItem}>

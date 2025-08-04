@@ -1,6 +1,6 @@
 import styles from './Iframe.module.css';
 
-function Iframe({ handleClose }) {
+function Iframe({ handleClose, url }) {
   return (
     <>
       <div className={styles.iframeContainer} onClick={handleClose} />
@@ -9,11 +9,7 @@ function Iframe({ handleClose }) {
         close
       </button>
 
-      <iframe
-        src="https://tooltool.design"
-        title="External Site"
-        className={styles.iframe}
-      />
+      <iframe src={url} title="External Site" className={styles.iframe} />
     </>
   );
 }
