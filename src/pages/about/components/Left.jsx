@@ -5,7 +5,7 @@ function Left() {
   return (
     <div className={styles.sectionBlock}>
       <div className={styles.aboutPageDiv}>
-        <p className={styles.sectionLabel}>ABOUT US</p>
+        <p className={styles.sectionLabel}>About Us</p>
         <h1>
           We design—and we build tools for brands.
           <br />
@@ -18,7 +18,7 @@ function Left() {
       </div>
 
       <div className={styles.aboutPageDiv}>
-        <p className={styles.sectionLabel}>OUR MISSION</p>
+        <p className={styles.sectionLabel}>Our Mission</p>
         <h1>
           As designers, we've learned that creating beautiful work is essential,
           but maintaining consistency within established design systems can be

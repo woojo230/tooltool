@@ -4,22 +4,31 @@ import hamburger from '../../assets/header_hamburger.svg';
 import style from './Header.module.css';
 import { useState, useRef, useEffect } from 'react';
 
-export function gotoHome(navigation) {
-  navigation('/home');
-}
-export function gotoCaseStudy(navigation) {
-  navigation('/case-study');
-}
-export function About(navigation) {
-  navigation('/about');
-}
-
 function Header() {
   const navigation = useNavigate();
   const [ishamburgerClicked, setIsHamburgerClicked] = useState(false);
   const [hideMenu, setHideMenu] = useState(true);
   const [isMobile, setIsMobile] = useState(true);
   const headerRef = useRef(null);
+
+  const closeMenu = () => {
+    setIsHamburgerClicked(false);
+  };
+
+  const gotoHome = (navigation) => {
+    navigation('/home');
+    closeMenu();
+  };
+
+  const gotoCaseStudy = (navigation) => {
+    navigation('/case-study');
+    closeMenu();
+  };
+
+  const About = (navigation) => {
+    navigation('/about');
+    closeMenu();
+  };
 
   // 모바일 환경 감지
   useEffect(() => {
@@ -40,9 +49,9 @@ function Header() {
   const handleHamburgerClick = () => {
     if (ishamburgerClicked) {
       setIsHamburgerClicked(false);
-      setHideMenu(false);
     } else {
       setIsHamburgerClicked(true);
+      setHideMenu(false);
     }
   };
 
@@ -51,7 +60,7 @@ function Header() {
     if (isMobile) {
       return {
         width: '152px',
-        height: ishamburgerClicked ? '165px' : '78px',
+        height: ishamburgerClicked ? '165px' : '80px',
       };
     } else {
       return {
@@ -66,14 +75,14 @@ function Header() {
       return {
         opacity: ishamburgerClicked ? 1 : 0,
         transition: 'opacity 0.4s ease-in-out, transform 0.4s ease-in-out',
-        display: ishamburgerClicked || !hideMenu ? 'flex' : 'none', // 수정
+        display: ishamburgerClicked || !hideMenu ? 'flex' : 'none',
       };
     } else {
       return {
         opacity: ishamburgerClicked ? 1 : 0,
-        pointerEvents: ishamburgerClicked ? 'auto' : 'none', // 수정
+        pointerEvents: ishamburgerClicked ? 'auto' : 'none',
         transition: 'opacity 0.4s',
-        display: ishamburgerClicked || !hideMenu ? 'flex' : 'none', // 수정
+        display: ishamburgerClicked || !hideMenu ? 'flex' : 'none',
       };
     }
   };

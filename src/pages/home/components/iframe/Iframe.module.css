@@ -17,7 +17,8 @@
   padding: 10px 20px;
   border: 6px solid var(--color-lime);
   background: var(--color-grey);
-  border-radius: 10px;
+  border-radius: 14px;
+  font-size: 16px;
   cursor: pointer;
   z-index: 1001;
   color: var(--color-white);

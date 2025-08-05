@@ -54,7 +54,7 @@
   .sectionBlock {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2.37rem;
   }
 
   .aboutPageDiv h1 {
