@@ -3,6 +3,7 @@ import logo from '../../assets/Logo.svg';
 import hamburger from '../../assets/header_hamburger.svg';
 import style from './Header.module.css';
 import { useState, useRef, useEffect } from 'react';
+import useIframeStore from '../../store/useIframStore';
 
 function Header() {
   const navigation = useNavigate();
@@ -10,22 +11,26 @@ function Header() {
   const [hideMenu, setHideMenu] = useState(true);
   const [isMobile, setIsMobile] = useState(true);
   const headerRef = useRef(null);
+  const closeIframe = useIframeStore((state) => state.closeIframe);
 
   const closeMenu = () => {
     setIsHamburgerClicked(false);
   };
 
   const gotoHome = (navigation) => {
+    closeIframe();
     navigation('/home');
     closeMenu();
   };
 
   const gotoCaseStudy = (navigation) => {
+    closeIframe();
     navigation('/case-study');
     closeMenu();
   };
 
   const About = (navigation) => {
+    closeIframe();
     navigation('/about');
     closeMenu();
   };

@@ -4,6 +4,7 @@ import CaseStudy from '../pages/case-study/caseStudy';
 import About from '../pages/about/about';
 import RootLayout from '../layout/root-layout';
 import NotFoundPage from '../pages/error/404';
+import Tool from '../pages/tool/tool';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: 'about',
         element: <About />,
+      },
+      {
+        path: 'tool',
+        element: <Tool />,
       },
     ],
   },

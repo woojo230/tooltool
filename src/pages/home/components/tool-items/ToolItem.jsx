@@ -1,23 +1,20 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './ToolItem.module.css';
 import Iframe from '../iframe/Iframe';
+import useIframeStore from '../../../../store/useIframStore';
 
 function ToolItem({ video, num, title, url }) {
   const [showIframe, setShowIframe] = useState(false);
+  const isOpen = useIframeStore((state) => state.isOpen);
+  const openIframe = useIframeStore((state) => state.openIframe);
+  const closeIframe = useIframeStore((state) => state.closeIframe);
 
-  const handleOpen = () => {
-    setShowIframe(true);
-  };
-
-  const handleClose = () => {
-    setShowIframe(false);
-  };
   return (
     <>
       <div className={styles.toolItemWrapper}>
-        {showIframe && <Iframe handleClose={handleClose} url={url} />}
+        {isOpen && <Iframe handleClose={closeIframe} url={url} />}
         <div className={styles.tooltoolItem}>
-          <a className={styles.thumbnailLink} onClick={handleOpen}>
+          <a className={styles.thumbnailLink} onClick={openIframe}>
             <div className={styles.tooltoolItem}>
               <div className={styles.thumbnailContainer}>
                 <video src={video} autoPlay muted loop playsInline></video>
@@ -25,7 +22,7 @@ function ToolItem({ video, num, title, url }) {
 
               <div
                 className={styles.tooltoolLandingButton}
-                onClick={handleOpen}
+                onClick={openIframe}
               >
                 <div className={styles.leftContainer}>
                   <span>0{num}</span>

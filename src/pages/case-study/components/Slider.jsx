@@ -9,37 +9,7 @@ import video5 from '../../../assets/caseStudy/enchelon_casestudy/enchelon_casest
 import img6 from '../../../assets/caseStudy/enchelon_casestudy/enchelon_casestudy_06.jpg';
 import video7 from '../../../assets/caseStudy/enchelon_casestudy/enchelon_casestudy_07.mp4';
 import Iframe from '../../home/components/iframe/Iframe';
-
-// export const mockData = [
-//   {
-//     data: img1,
-//     type: 'image',
-//   },
-//   {
-//     data: img2,
-//     type: 'image',
-//   },
-//   {
-//     data: video3,
-//     type: 'video',
-//   },
-//   {
-//     data: img4,
-//     type: 'image',
-//   },
-//   {
-//     data: video5,
-//     type: 'video',
-//   },
-//   {
-//     data: img6,
-//     type: 'image',
-//   },
-//   {
-//     data: video7,
-//     type: 'video',
-//   },
-// ];
+import useIframeStore from '../../../store/useIframStore';
 
 export function Slider({ title, theme, mockData, url }) {
   const [sliderValue, setSliderValue] = useState(0);
@@ -49,7 +19,9 @@ export function Slider({ title, theme, mockData, url }) {
   const animationRef = useRef(null);
   const startTimeRef = useRef(null);
   const duration = 30000;
-  const [showIframe, setShowIframe] = useState(false);
+  const isOpen = useIframeStore((state) => state.isOpen);
+  const openIframe = useIframeStore((state) => state.openIframe);
+  const closeIframe = useIframeStore((state) => state.closeIframe);
 
   const getMaxScroll = useCallback(() => {
     if (!carouselTrackRef.current || !carouselRef.current) return 0;
@@ -122,18 +94,9 @@ export function Slider({ title, theme, mockData, url }) {
       maxScroll > 0 ? (carouselRef.current.scrollLeft / maxScroll) * 100 : 0;
     setSliderValue(newValue);
   };
-
-  const handleOpen = () => {
-    setShowIframe(true);
-  };
-
-  const handleClose = () => {
-    setShowIframe(false);
-  };
-
   return (
     <div className={style.caseBlock}>
-      {showIframe && <Iframe handleClose={handleClose} url={url} />}
+      {isOpen && <Iframe handleClose={closeIframe} url={url} />}
       <div className={style.carousel} ref={carouselRef} onScroll={handleScroll}>
         <div className={style.carouselTrack} ref={carouselTrackRef}>
           {mockData.map((data, idx) =>
@@ -172,7 +135,7 @@ export function Slider({ title, theme, mockData, url }) {
           <span>{title}</span>
           <span>{theme}</span>
         </div>
-        <div className={style.rightContainer} onClick={handleOpen}>
+        <div className={style.rightContainer} onClick={openIframe}>
           <a>Try This Tool!</a>
         </div>
       </div>
