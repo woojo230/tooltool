@@ -19,9 +19,17 @@ export function Slider({ title, theme, mockData, url }) {
   const animationRef = useRef(null);
   const startTimeRef = useRef(null);
   const duration = 30000;
+
   const isOpen = useIframeStore((state) => state.isOpen);
+  const currentUrl = useIframeStore((state) => state.currentUrl);
   const openIframe = useIframeStore((state) => state.openIframe);
   const closeIframe = useIframeStore((state) => state.closeIframe);
+
+  const handleOpenIframe = (e) => {
+    e.preventDefault();
+    console.log('Slider opening iframe with URL:', url); // 디버깅용
+    openIframe(url); // url 파라미터 전달
+  };
 
   const getMaxScroll = useCallback(() => {
     if (!carouselTrackRef.current || !carouselRef.current) return 0;
@@ -96,7 +104,7 @@ export function Slider({ title, theme, mockData, url }) {
   };
   return (
     <div className={style.caseBlock}>
-      {isOpen && <Iframe handleClose={closeIframe} url={url} />}
+      {isOpen && <Iframe handleClose={closeIframe} url={currentUrl} />}
       <div className={style.carousel} ref={carouselRef} onScroll={handleScroll}>
         <div className={style.carouselTrack} ref={carouselTrackRef}>
           {mockData.map((data, idx) =>
@@ -135,7 +143,7 @@ export function Slider({ title, theme, mockData, url }) {
           <span>{title}</span>
           <span>{theme}</span>
         </div>
-        <div className={style.rightContainer} onClick={openIframe}>
+        <div className={style.rightContainer} onClick={handleOpenIframe}>
           <a>Try This Tool!</a>
         </div>
       </div>
