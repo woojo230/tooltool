@@ -37,7 +37,6 @@
   object-fit: cover;
   border-radius: 20px;
   background-color: var(--color-accent-variant);
-  aspect-ratio: 16 / 9;
   display: block; /* already here, just emphasizing */
 }
 
@@ -116,10 +115,5 @@
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none; /* Firefox */
     border-radius: 20px;
-  }
-  .carouselTrack img,
-  .carouselTrack video {
-    width: 21.5rem;
-    height: 17.5rem;
   }
 }
