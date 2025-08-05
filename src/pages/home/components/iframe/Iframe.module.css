@@ -13,7 +13,7 @@
 .button {
   position: fixed;
   bottom: 4%;
-  right: 100px;
+  right: 20px;
   padding: 10px 20px;
   border: 6px solid var(--color-lime);
   background: var(--color-grey);

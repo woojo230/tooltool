@@ -1,8 +1,9 @@
 /* 반응형 래퍼 */
 .toolItemWrapper {
   position: relative;
-  min-height: 60vh;
+  /* min-height: 60vh; */
   /* margin-top: 50px; */
+  height: auto;
 }
 
 .tooltoolItem {

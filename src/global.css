@@ -34,7 +34,7 @@ body {
   letter-spacing: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding-bottom: 200px;
+  /* padding-bottom: 200px; */
 }
 
 html,
