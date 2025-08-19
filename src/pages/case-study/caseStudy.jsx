@@ -3,6 +3,7 @@ import style from './caseStudy.module.css';
 import Slider from './components/Slider';
 import { mockData as mock1 } from './mock/mock1';
 import { mockData as mock2 } from './mock/mock2';
+import { mockData as mock3 } from './mock/mock3';
 
 function CaseStudy() {
   const dataArr = [
@@ -16,6 +17,12 @@ function CaseStudy() {
       title: 'Muse',
       theme: 'Fluid Tool',
       mockData: mock2,
+      url: 'https://tool-fluid.netlify.app/',
+    },
+    {
+      title: 'Bitxel',
+      theme: 'Bitxel Tool',
+      mockData: mock3,
       url: 'https://tool-fluid.netlify.app/',
     },
   ];
