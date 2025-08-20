@@ -23,7 +23,7 @@ function CaseStudy() {
       title: 'Bitxel',
       theme: 'Bitxel Tool',
       mockData: mock3,
-      url: 'https://tool-fluid.netlify.app/',
+      url: 'https://tool-bitxel.netlify.app/',
     },
   ];
   return (
