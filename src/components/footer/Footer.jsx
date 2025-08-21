@@ -31,7 +31,11 @@ function Footer() {
           <>
             <p>©tooltool 2025</p>
             <p>Custom Design Tool Archive</p>
-            <p>@tooltool.design</p>
+            <p>
+              <a href="https://instagram.com/tooltool.design" target="_blank">
+                @tooltool.design
+              </a>
+            </p>
           </>
         )}
       </div>
