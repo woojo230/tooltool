@@ -54,7 +54,7 @@ function Right() {
           </div>
           <p></p>
           <div className={`${styles.contactGroup} ${styles.designerSection}`}>
-            <p>Developer</p>
+            <p>Developer&nbsp;</p>
             <p>
               <a
                 href="https://instagram.com/woojung_230"

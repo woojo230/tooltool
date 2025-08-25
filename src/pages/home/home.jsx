@@ -30,7 +30,9 @@ function Home() {
   return (
     <div className={style.pageWrapper}>
       <TopText
-        text1={'Welcome to Tooltool! Have fun experimenting with our tools.'}
+        text1={
+          'Welcome toooooo Tooltool! Have fun experimenting with our tools.'
+        }
         text2={'See if you need one for your brand!'}
       />
       <div className={style.tooltoolGallery}>

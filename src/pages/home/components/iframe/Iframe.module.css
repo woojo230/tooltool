@@ -22,6 +22,7 @@
   cursor: pointer;
   z-index: 1001;
   color: var(--color-white);
+  font-family: 'TT Hoves Pro Medium';
 }
 
 .iframe {

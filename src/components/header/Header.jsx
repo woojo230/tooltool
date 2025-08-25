@@ -86,7 +86,7 @@ function Header() {
       return {
         opacity: ishamburgerClicked ? 1 : 0,
         pointerEvents: ishamburgerClicked ? 'auto' : 'none',
-        transition: 'opacity 0.4s',
+        transition: 'opacity 0.4s ease-in-out, transform 0.4s ease-in-out',
         display: ishamburgerClicked || !hideMenu ? 'flex' : 'none',
       };
     }
