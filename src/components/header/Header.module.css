@@ -74,7 +74,7 @@
   display: block;
   width: 25px;
   height: 25px;
-  margin-bottom: 3px;
+  /* margin-bottom: 3px; */
 }
 
 @media (max-width: 768px) {
@@ -84,6 +84,10 @@
     width: 152px;
     height: 52px;
     transition: width 0.4s ease-in-out, height 0.4s ease-in-out !important;
+  }
+
+  .hamburger img {
+    margin-bottom: 3px;
   }
 
   .headerLogo {
@@ -112,15 +116,7 @@
   }
 
   .headerButton {
-    .headerButton {
-      display: flex;
-      padding-right: 15px;
-      padding-left: 15px;
-      padding-bottom: 3px !important;
-      cursor: pointer;
-      align-items: center;
-      justify-content: center;
-      z-index: 3;
-    }
+    order: 2;
+    padding-bottom: 3px !important; /* 모바일에서만 필요한 패딩 */
   }
 }

@@ -29,7 +29,7 @@ function Right() {
 
           <p className={styles.sectionLabel}>Our Team</p>
           <div className={`${styles.contactGroup} ${styles.designerSection}`}>
-            <p>Designers&nbsp;</p>
+            <p>Designers</p>
             <p>
               <a
                 href="https://instagram.com/susu_sean"
@@ -50,11 +50,9 @@ function Right() {
                 Angela Park
               </a>
             </p>
-            <p></p>
           </div>
-          <p></p>
           <div className={`${styles.contactGroup} ${styles.designerSection}`}>
-            <p>Developer&nbsp;</p>
+            <p>Developer</p>
             <p>
               <a
                 href="https://instagram.com/woojung_230"
