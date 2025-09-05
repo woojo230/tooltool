@@ -4,9 +4,22 @@ import Slider from './components/Slider';
 import { mockData as mock1 } from './mock/mock1';
 import { mockData as mock2 } from './mock/mock2';
 import { mockData as mock3 } from './mock/mock3';
+import { mockData as mock4 } from './mock/mock4_flipBoards';
 
 function CaseStudy() {
   const dataArr = [
+    {
+      title: 'Bitxel',
+      theme: 'Bitxel Tool',
+      mockData: mock3,
+      url: 'https://tool-bitxel.netlify.app/',
+    },
+    {
+      title: 'Flipboards',
+      theme: 'Flipboards Tool',
+      mockData: mock4,
+      url: 'https://tool-flip-boards.netlify.app/',
+    },
     {
       title: 'Enchelon',
       theme: 'Pin Toy Tool',
@@ -18,12 +31,6 @@ function CaseStudy() {
       theme: 'Fluid Tool',
       mockData: mock2,
       url: 'https://tool-fluid.netlify.app/',
-    },
-    {
-      title: 'Bitxel',
-      theme: 'Bitxel Tool',
-      mockData: mock3,
-      url: 'https://tool-bitxel.netlify.app/',
     },
   ];
   return (

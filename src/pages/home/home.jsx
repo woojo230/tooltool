@@ -5,9 +5,16 @@ import style from './Home.module.css';
 import video3 from '../../assets/thumbnail/filpboards_thumbnail.mp4';
 import video1 from '../../assets/thumbnail/fluid_thumbnail.mp4';
 import video2 from '../../assets/thumbnail/pintoy_thumbnail.mp4';
+import video4 from '../../assets/thumbnail/bitxel_thumbnail.mp4';
 
 function Home() {
   const mockData = [
+    {
+      video: video4,
+      num: 4,
+      title: 'bitxel',
+      url: 'https://tool-bitxel.netlify.app/',
+    },
     {
       video: video3,
       num: 3,
